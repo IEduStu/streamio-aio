@@ -1,4 +1,4 @@
-FROM node:20-alpine as stremio-web
+FROM node:18-alpine as stremio-web
 
 RUN apk add --no-cache git
 
