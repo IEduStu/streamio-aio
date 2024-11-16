@@ -6,7 +6,7 @@ Run with this command:
 docker run -p 8080:8080 ghcr.io/iedustu/streamio-aio:latest
 ```
 
-OR with docker compose:
+Or with docker compose:
 ```yaml
 name: streamio-aio
 
