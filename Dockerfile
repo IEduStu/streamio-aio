@@ -11,9 +11,12 @@ RUN git clone --single-branch --depth 1 --branch "$WEB_GIT_BRANCH" "$WEB_GIT_REP
 RUN npm ci
 RUN npm run build
 
-FROM stremio/server:latest
+
+FROM stremio/server:latest as stremio-server
 
 COPY --from=stremio-web /stremio-web/build /stremio-web
+
+LABEL version=${VERSION}
 
 ENV NO_CORS=1
 
