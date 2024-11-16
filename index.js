@@ -20,12 +20,12 @@ app.get("/", cookieParser(), (req, res) => {
     if (req.cookies["stremio-server-set"] != "true") {
         res.cookie("stremio-server-set", "true");
 
-        const currentUrl = new URL(req.originalUrl, `${req.protocol}://${req.get("host") || "localhost"}${req.originalUrl}`);
+        const currentUrl = new URL(req.originalUrl, "http://localhost");
         if (!currentUrl.searchParams.has("streamingServerUrl")) {
             const newUrl = new URL(currentUrl.href);
             newUrl.searchParams.set("streamingServerUrl", currentUrl.origin);
 
-            res.redirect(newUrl.href);
+            res.redirect(newUrl.href.slice(newUrl.origin.length));
             return;
         }
     }

@@ -27,3 +27,4 @@ RUN npm ci
 
 EXPOSE 8080
 CMD ["node", "index.js"]
+ENTRYPOINT [ "node", "index.js" ]
