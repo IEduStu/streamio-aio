@@ -20,7 +20,7 @@ app.get("/", cookieParser(), (req, res) => {
     if (req.cookies["stremio-server-set"] != "true") {
         res.cookie("stremio-server-set", "true");
 
-        const currentUrl = new URL(req.originalUrl, "http://localhost");
+        const currentUrl = new URL(req.originalUrl, `${req.protocol}://${req.get("host") || "localhost"}${req.originalUrl}`);
         if (!currentUrl.searchParams.has("streamingServerUrl")) {
             const newUrl = new URL(currentUrl.href);
             newUrl.searchParams.set("streamingServerUrl", currentUrl.origin);
