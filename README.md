@@ -23,7 +23,7 @@ Then open port `8080` in your browser.
 ## Using an [mDNS](https://en.wikipedia.org/wiki/Multicast_DNS) (a `.local` domain)
 If you host this docker image on a device on your network and connect to is using [mDNS](https://en.wikipedia.org/wiki/Multicast_DNS) (a `.local` domain, such as `my-device.local`), streaming may not work for you.
 
-To fix that, make sure to pin the deivce's IP in your router to ensure it doesn't change, and then set a mapping between the domain you use and the device's static external IP.
+To fix that, make sure to pin the device's IP in your router to ensure it doesn't change, and then set a mapping between the domain you use and the device's static external IP.
 
 This is how you do is using a `docker run` command:
 ```bash
