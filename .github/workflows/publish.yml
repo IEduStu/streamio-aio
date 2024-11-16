@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: "iedustu/streamio-aio"
+  IMAGE_NAME: "iedustu/stremio-aio"
   WEB_GIT_REPO: "https://github.com/IEduStu/stremio-web.git"
   WEB_GIT_BRANCH: "mobileImprovements"
 

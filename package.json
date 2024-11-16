@@ -1,5 +1,5 @@
 {
-  "name": "streamio-aio",
+  "name": "stremio-aio",
   "version": "1.0.0",
   "description": "One docker image of both Stremio server and Stremio web",
   "main": "index.js",
