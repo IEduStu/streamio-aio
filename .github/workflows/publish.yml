@@ -8,6 +8,8 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: "iedustu/streamio-aio"
+  ARG WEB_GIT_REPO: "https://github.com/IEduStu/stremio-web.git"
+  ARG WEB_GIT_BRANCH: "mobileImprovements"
 
 jobs:
   build-and-publish:
@@ -43,7 +45,10 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
-          build-args: VERSION=${{github.event.release.tag_name}}
+          build-args: |
+            VERSION=${{github.event.release.tag_name}}
+            WEB_GIT_REPO=${{env.WEB_GIT_REPO}}
+            WEB_GIT_BRANCH=${{env.WEB_GIT_BRANCH}}
           tags: ${{env.REGISTRY}}/${{env.IMAGE_NAME}}:${{github.event.release.tag_name}},${{env.REGISTRY}}/${{env.IMAGE_NAME}}:latest
           labels: ${{steps.meta.outputs.labels}}
       

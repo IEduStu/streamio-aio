@@ -6,7 +6,7 @@ WORKDIR /stremio-web
 
 ARG WEB_GIT_REPO="https://github.com/Stremio/stremio-web.git"
 ARG WEB_GIT_BRANCH="development"
-RUN git clone --single-branch --branch --depth 1 "$WEB_GIT_BRANCH" "$WEB_GIT_REPO" .
+RUN git clone --single-branch --depth 1 --branch "$WEB_GIT_BRANCH" "$WEB_GIT_REPO" .
 
 RUN npm ci
 RUN npm run build
