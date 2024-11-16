@@ -12,7 +12,7 @@ RUN npm ci
 RUN npm run build
 
 
-FROM stremio/server:latest as stremio-server
+FROM stremio/server:v4.20.8 as stremio-server
 
 COPY --from=stremio-web /stremio-web/build /stremio-web
 
