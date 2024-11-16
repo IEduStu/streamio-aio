@@ -73,20 +73,16 @@ app.use((req, res) => {
         reqRes.on("error", (err) => {
             console.error("Request response error:", err);
 
-            res
-                .status(500)
-                .write(err.message)
-                .end();
+            res.status(500).write(err.message);
+            res.end();
         });
     });
 
     request.on("error", (err) => {
         console.error("Request error:", err);
 
-        res
-            .status(500)
-            .write(err.message)
-            .end();
+        res.status(500).write(err.message);
+        res.end();
     });
 
     req.pipe(request, {
